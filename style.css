@@ -1,8 +1,21 @@
+body
+{
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.14187681908700978) 0%, rgba(0, 55, 19, 0.186) 17%, rgba(49, 0, 84, 0.197) 26%, rgba(73, 0, 126, 0.22) 39%, rgba(34, 113, 0, 0.174) 43%, rgba(169,0,60,0.21190483029149154) 60%, rgba(16,0,219,0.16428578267244398) 71%, rgba(255, 0, 0, 0.26) 79%, rgba(46, 59, 135, 0.123) 87%, rgba(0, 98, 255, 0.174) 96%);
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+}
+
 h1
 {
     color: rgb(255, 106, 130);
     text-align: center;
     margin-bottom: 30px;
+    margin-left: 8%;
 }
 
 #addEvent
@@ -66,7 +79,45 @@ h1
     box-shadow: 5px 2px 2px rgb(54, 33, 47);
 }
 
+.EventContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .eventElement
 {
     border: 3px yellow solid;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px pink;
+    border-radius: 30px;
+    padding: 20px;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.14187681908700978) 0%, rgba(73, 0, 126, 0.253) 39%, rgba(255, 0, 0, 0.253) 79%, rgba(0,97,255,0.38557429807860644) 96%);
+
+}
+
+.eventDescription
+{
+    color : rgba(0, 0, 0, 0.391);
+    font-style: italic;
+    font-size: 15px;
+}
+
+.eventDates
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dateHolder
+{
+    border: 1px blue solid;
+    border-radius: 100px;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
