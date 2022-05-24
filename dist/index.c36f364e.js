@@ -2,7 +2,7 @@ let eventList = [];
 let User = document.querySelector("select").value;
 function displayEventAdder() {
     console.log("bonjour");
-    let modalWindow = document.body.querySelector("#modalWindow");
+    let modalWindow = document.body.querySelector(".modalWindow");
     console.log(modalWindow);
     modalWindow.style.display = "block";
     document.body.querySelector("#closeModal").addEventListener("click", ()=>{
@@ -11,13 +11,22 @@ function displayEventAdder() {
 }
 function displayAvailability() {
     console.log("has to display availability in a little philactère");
+// https://codepen.io/chocochip/pen/zYxMgRG code pen with a popover in css only
 }
 function deleteEvent() {
     console.log("has to delete the event");
     let modalWindow = document.createElement("div");
+    let modalContent = document.createElement("div");
     modalWindow.setAttribute("class", "modalWindow");
     document.body.appendChild(modalWindow);
     modalWindow.style.display = "block";
+    modalWindow.appendChild(modalContent);
+    let title = document.createElement("h3");
+    let name = document.createElement("p");
+    let description = document.createElement("p");
+    modalContent.appendChild(title);
+    modalContent.appendChild(name);
+    modalContent.appendChild(description);
 }
 function editEvent() {
     console.log("has to edit the event");
