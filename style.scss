@@ -1,0 +1,160 @@
+body
+{
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.14187681908700978) 0%, rgba(0, 55, 19, 0.186) 17%, rgba(49, 0, 84, 0.197) 26%, rgba(73, 0, 126, 0.22) 39%, rgba(34, 113, 0, 0.174) 43%, rgba(169,0,60,0.21190483029149154) 60%, rgba(16,0,219,0.16428578267244398) 71%, rgba(255, 0, 0, 0.26) 79%, rgba(46, 59, 135, 0.123) 87%, rgba(0, 98, 255, 0.174) 96%);
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+h1
+{
+    color: rgb(255, 106, 130);
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 8%;
+}
+
+#addEvent
+{
+    border: 3px rgb(218, 218, 49) solid;
+    box-shadow: 5px 5px 10px pink;
+    font-size: large;
+    width: 15vh;
+    background-color: rgba(193, 179, 53, 0.072);
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#submitEvent:active
+{
+    box-shadow: none;
+}
+
+.modalWindow
+{
+    /* width: 10vh; */
+    margin: auto;
+    display: none;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+}
+
+.modalHeader
+{
+    background-color: pink;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalContent
+{
+    width: 50%;
+    margin: auto;
+    border: 5px pink solid;
+    background-color: aqua;
+    margin-top: 20vh;
+}
+
+.addDate
+{
+    font-size: 12px;
+    &::before{
+        content: "➕";
+    }
+}
+
+#closeModal
+{
+    border: 1px black solid;
+    box-shadow: 5px 2px 2px rgb(54, 33, 47);
+    padding: 1px;
+    height: 20px;
+}
+
+#closeModal:active
+{
+    box-shadow: none;
+}
+
+#submitEvent
+{
+    background-color: whitesmoke;
+    border: 1px black solid;
+    box-shadow: 5px 2px 2px rgb(54, 33, 47);
+}
+
+.EventContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eventElement
+{
+    border: 3px yellow solid;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px pink;
+    border-radius: 30px;
+    padding: 20px;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.14187681908700978) 0%, rgba(73, 0, 126, 0.253) 39%, rgba(255, 0, 0, 0.253) 79%, rgba(0,97,255,0.38557429807860644) 96%);
+
+}
+
+.eventDescription
+{
+    color : rgba(0, 0, 0, 0.391);
+    font-style: italic;
+    font-size: 15px;
+}
+
+.eventDates
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dateHolder
+{
+    border: 1px blue solid;
+    border-radius: 100px;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.delAndEdit
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.delAndEdit > *
+{
+    border: 5px pink solid;
+    box-shadow: 2px 2px 2px yellow;
+    font-size: 20px;
+    &:active
+    {
+        box-shadow: none;
+    }
+}

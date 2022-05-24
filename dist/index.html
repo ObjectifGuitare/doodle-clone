@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.3a01df49.css">
+    <link rel="stylesheet" href="/index.8353e49f.css">
     <script defer="" src="/index.c36f364e.js"></script>
     <title>Doodle clone</title>
 </head>
@@ -14,17 +14,23 @@
         <p>Logged in as: <select>
             <option value="Jean-Daniel" default="">Jean-Daniel</option>
             <option value="Seb">Seb</option>
+            <option value="Tastitito">Tastitito</option>
+            <option value="Olivier">Olivier</option>
+            <option value="Kayn">Kayn</option>
         </select></p>
     </header>
     <div id="addEvent">Add an event</div>
-    <div id="modalWindow">
+    <div class="modalWindow">
         <div class="modalContent">
             <div class="modalHeader">
                 <h3>Create A New Event !</h3>
                 <div id="closeModal">&times;</div>
             </div>
             <p>Name : <input id="nameInput" type="text"> </p>
-            <p>Date : <input id="dateInput" type="text"> </p>
+            <div class="dateInputCtn">
+                <p>Date : <input class="dateInput" type="text"></p>
+                <p class="addDate">Add a new date</p>
+            </div>
             <p>Description : <input id="descriptionInput" type="text"> </p>
             <button id="submitEvent">Submit Event</button>
         </div>
