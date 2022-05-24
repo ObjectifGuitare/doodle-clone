@@ -1,17 +1,5 @@
-let eventList = [
-    {
-        name: "Hard bop electro punk gig",
-        dates: ["2022-07-01", "2022-09-23"],
-        author: "Méga Sébastien",
-        description: "akshualy it's just good music dw ^^ UwU"
-    },
-    {
-        name: "je vais cuisiner mes enfants",
-        dates: ["2023-07-01", "2024-09-23"],
-        author: "Marc",
-        description: "tendre et chaud"
-    }
-]
+let eventList = []
+let User = document.querySelector("select").value
 
 
 function displayEventAdder()
@@ -31,6 +19,10 @@ function displayEventAdder()
 function displayEvents()
 {
     let Eventscontainer = document.body.querySelector(".EventContainer");
+    // for(let elem of document.querySelectorAll(".eventElement"))
+    // {
+    //     elem.remove()
+    // }
     let i = 0;
     for (const event of eventList) {
         let eventDiv = document.createElement("div");
@@ -70,7 +62,7 @@ function displayEvents()
             checkYes.name = 'interest';
             checkYes.value = 'Yes';
             labelYes.htmlFor = 'Yes';
-            dateValue.innerHTML = date;
+            dateValue.innerHTML = date.date;
             dateValue.setAttribute("class", `event${i}`)
             dateHolder.appendChild(dateValue)
             dateHolder.appendChild(br);
@@ -89,6 +81,55 @@ function displayEvents()
     }
 }
 
+function fetchEventList()
+{
+    fetch("http://localhost:3000/api/events/", { method: 'GET'})
+    .then(res => res.json())
+    .then(obj => {
+        eventList = obj
+        displayEvents();
+    })
+    .catch(error => console.log(error))
+}
 
-displayEvents();
+
+function postEvent(newEvent)
+{
+    fetch("http://localhost:3000/api/events/", {
+     
+        // Adding method type
+        method: "POST",
+         
+        // Adding body or contents to send
+        body: JSON.stringify(newEvent),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    // Converting to JSON
+    .then(response => response.json())
+    
+    // Displaying results to console
+    .then(json => {console.log(json);fetchEventList()});
+}
+
+function addEvent()
+{
+    // let document.querySelector("");
+    let newEvent= {};
+    newEvent.name = document.querySelector("#nameInput").value;
+    newEvent.description = document.querySelector("#descriptionInput").value;
+    newEvent.dates = [];
+    newEvent.dates.push(document.querySelector("#dateInput").value)
+    newEvent.author = User;
+    console.log(newEvent);
+    console.log(eventList);
+
+    postEvent(newEvent);
+}
+
+
+fetchEventList()
+document.body.querySelector("select").addEventListener("change", ()=>User = document.querySelector("select").value)
 document.body.querySelector("#addEvent").addEventListener("click", displayEventAdder)
+document.body.querySelector("#submitEvent").addEventListener("click", addEvent)
